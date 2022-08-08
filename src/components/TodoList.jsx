@@ -12,7 +12,6 @@ const TodoList = ({
   return (
     <ul className="TodoList">
       {todos.map((todo, index) => {
-        //console.log(`${index}번 todo `, todo);
         return (
           <TodoListItem
             todo={todo}

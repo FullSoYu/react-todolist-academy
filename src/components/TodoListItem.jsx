@@ -19,7 +19,7 @@ const TodoListItem = ({
   return (
     <li className="TodoListItem">
       <div
-        className={cn("checkbox", { checked: checked })}
+        className={cn("checkbox", { checked: checked })} // id 눌림 확인 가능
         onClick={() => {
           onToggle(id);
         }}
