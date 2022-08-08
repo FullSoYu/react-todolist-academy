@@ -43,37 +43,11 @@ function App() {
     }
   };
 
-  // 수정 안됨
-  // const onUpdate = async (id, text) => {
-  //   try {
-  //     const data = await axios({
-  //       url: `http://localhost:4000/todos/check/${id}`,
-  //       method: "PATCH",
-  //     });
-  //     setTodos((data) =>
-  //       todos.map((todo) => (todo.id === id ? { ...todo, text } : todo))
-  //     );
-  //     onInsertToggle(data);
-  //   } catch (e) {
-  //     setError(e);
-  //   }
-  // };
-
   const onUpdate = (id, text) => {
     setTodos((todos) =>
       todos.map((todo) => (todo.id === id ? { ...todo, text } : todo))
     );
     onInsertToggle();
-  };
-
-  const onDelete = async (id) => {
-    try {
-      const data = await axios.delete(
-        `http://localhost:4000/todos/check/${id}`
-      );
-    } catch (e) {
-      setError(e);
-    }
   };
 
   useEffect(() => {
@@ -118,7 +92,6 @@ function App() {
           onInsertToggle={onInsertToggle}
           selectedTodo={selectedTodo}
           onUpdate={onUpdate}
-          onDelete={onDelete}
         />
       )}
     </TodoTemplate>
